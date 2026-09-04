@@ -21,8 +21,10 @@ sudo apt-get install -y rpcsvc-proto libtirpc-dev rpcbind
 2. Inicie o serviço de mapeamento de portas: rpcbind (o portmapper moderno) essencial para o cliente achar o servidor.
 
 ```bash
-sudo service rpcbind start
+sudo /usr/sbin/rpcbind -w
 ```
+
+**OBS**: a flag `-w` ativa o "warm start", garantindo que ele limpe registros antigos.
 
 # Passo 1: O Arquivo de Especificação XDR (External Data Representation)
 
