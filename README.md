@@ -23,3 +23,19 @@ sudo apt-get install -y rpcgen libtirpc-dev rpcbind
 ```bash
 sudo service rpcbind start
 ```
+
+# Passo 1: O Arquivo de Especificação XDR (External Data Representation)
+
+Crie o arquivo `date.x` exatamente como especificado:
+
+```text
+
+/* arquivo date.x */
+program DATE_PROG {
+    version DATE_VERS {
+        long bin_date(void) = 1;
+        string str_date(long) = 2;
+    } = 1;
+} = 0x31234567;
+```
+
