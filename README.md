@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install -y rpcgen libtirpc-dev rpcbind
 ```
 
-2. Inicie o serviço de mapeamento de portas (essencial para o cliente achar o servidor):
+2. Inicie o serviço de mapeamento de portas: rpcbind (o portmapper moderno) essencial para o cliente achar o servidor.
 
 ```bash
 sudo service rpcbind start
