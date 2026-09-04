@@ -130,3 +130,18 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+## Passo 5: Compilação
+
+Como estamos usando a biblioteca externa libtirpc, precisamos passar caminhos de include (-I) e a flag de linkagem (-ltirpc) ao compilador GCC.
+
+1. **Compilar o Servidor**:
+
+```bash
+gcc -I/usr/include/tirpc -o server date_svc.c dateproc.c -ltirpc
+```
+
+2. **Compilar o Cliente**:
+
+```bash
+gcc -I/usr/include/tirpc -o client client.c date_clnt.c -ltirpc
+```
