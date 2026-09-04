@@ -11,7 +11,7 @@ Instalar a biblioteca de transporte independente libtirpc e o serviço rpcbind (
 1. Abra o terminal do Codespaces e instale as dependências:
 
 ```bashs
-udo apt-get update
+sudo apt-get update
 ```
 
 ```
