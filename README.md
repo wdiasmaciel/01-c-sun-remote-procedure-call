@@ -48,3 +48,33 @@ rpcgen -M -N date.x
 ```
 
 **OBS**: a flag -N (Newstyle) facilita a passagem de argumentos, mas se quiser seguir o padrão clássico exato, use apenas rpcgen date.x.
+
+## Passo 3: Implementação do Servidor (dateproc.c)
+
+Crie o arquivo dateproc.c. 
+
+Os procedimentos remotos precisam retornar ponteiros para variáveis estáticas, pois variáveis locais da pilha seriam destruídas ao sair da função.
+
+```c
+#include <rpc/rpc.h>
+#include <time.h>
+#include "date.h"
+
+/* Implementação do bin_date: */
+long * bin_date_1_svc(void *argp, struct svc_req *rqstp) {
+    static long result;
+    result = (long)time(NULL);
+    return &result;
+}
+
+/* Implementação do str_date: */
+char ** str_date_1_svc(long *argp, struct svc_req *rqstp) {
+    static char *result;
+    time_t time_val = (time_t)*argp;
+    
+    // ctime retorna uma string terminada em \n:
+    result = ctime(&time_val); 
+    return &result;
+}
+```
+
