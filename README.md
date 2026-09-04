@@ -159,3 +159,10 @@ sudo ./server &
 ```bash
 ./client localhost
 ```
+
+3. Resultado esperado no terminal:
+
+```text
+Data no servidor localhost (binário) = 1784841920
+Data no servidor localhost (string) = Sat Aug 22 23:38:00 2026
+```
