@@ -39,3 +39,12 @@ program DATE_PROG {
 } = 0x31234567;
 ```
 
+## Passo 2: Geração dos Stubs
+
+No terminal, execute o comando rpcgen. No Linux, usamos a flag -M (para tornar o código seguro para threads/multithread) ou compilamos com suporte a tirpc:
+
+```bash
+rpcgen -M -N date.x
+```
+
+**OBS**: a flag -N (Newstyle) facilita a passagem de argumentos, mas se quiser seguir o padrão clássico exato, use apenas rpcgen date.x.
