@@ -11,11 +11,11 @@ Instalar a biblioteca de transporte independente libtirpc e o serviço rpcbind (
 1. Abra o terminal do Codespaces e instale as dependências:
 
 ```bashs
-sudo apt update
+sudo apt-get update
 ```
 
 ```
-sudo apt install -y rpcgen libtirpc-dev rpcbind
+sudo apt-get install -y rpcsvc-proto libtirpc-dev rpcbind
 ```
 
 2. Inicie o serviço de mapeamento de portas: rpcbind (o portmapper moderno) essencial para o cliente achar o servidor.
