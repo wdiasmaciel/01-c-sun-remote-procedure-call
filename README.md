@@ -145,3 +145,17 @@ gcc -I/usr/include/tirpc -o server date_svc.c dateproc.c -ltirpc
 ```bash
 gcc -I/usr/include/tirpc -o client client.c date_clnt.c -ltirpc
 ```
+
+## Passo 6: Execução
+
+1. **Executar o Servidor** (em background):
+
+```bash
+sudo ./server &
+```
+
+2. **Executar o Cliente** (apontando para o **localhost** já que estamos na mesma máquina do Codespaces):
+
+```bash
+./client localhost
+```
